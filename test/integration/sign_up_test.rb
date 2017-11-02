@@ -14,7 +14,8 @@ class SignUpTest < ActionDispatch::IntegrationTest
             post user_registration_path, params: { user: { name: "Example", email: "user@example.com", password: "password", password_confirmation: "password" } }
     end
     #redirect to user show page
-    assert_redirected_to user_path
+    follow_redirect!
+    assert_select 'a[href=?]', sign_out_path
   end
     
 end

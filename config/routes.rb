@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   root 'static_pages#home'
 
   get '/contact', to: 'static_pages#contact'
@@ -11,8 +11,10 @@ Rails.application.routes.draw do
   devise_scope :user do
      get '/sign_up', to: 'devise/registrations#new'
      get '/log_in',  to: 'devise/sessions#new'
+     get '/sign_out', to: 'devise/sessions#destroy'
   end
 
   resources :users, only: [:create, :show]
+  resources :beers 
     
 end
