@@ -1,0 +1,20 @@
+<table class="table table" id="beer_table">
+    <thead>
+      <tr>
+      <th>Brewery</th>
+      <th>Name</th>
+      <th>Style</th>
+      <th>Rating</th>
+        </tr>
+    </thead>
+      <% @user.beers.each do |beer| %>
+      <tbody>
+            <tr>
+                <td> <%= beer.brewery %> </td>
+                <td> <%= beer.name %> </td>
+                <td> <%= beer.style %> </td>
+                <td> <%= beer.rating %></td>
+            </tr>
+      <% end %>
+    </tbody>
+</table>

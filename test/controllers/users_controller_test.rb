@@ -6,9 +6,9 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
      @user = users(:john) 
   end
     
-  test "should get user show page" do
+  test "should redirect if not logged in" do
     get user_path(@user.id)
-    assert_response :success
+    assert_redirected_to '/users/sign_in'
   end
 
 end

@@ -5,15 +5,4 @@
     <%= render 'beers/form' %>
 <% end %>
 
-<table>
-      <th>Name</th>
-      <th>Rating</th>
-      <% @user.beers.each do |beer| %>
-      <tbody>
-            <tr>
-                <td> <%= beer.name %> </td>
-                <td> <%= beer.rating %></td>
-            </tr>
-      <% end %>
-    </tbody>
-</table>
+<%= render 'beers/table' %>
