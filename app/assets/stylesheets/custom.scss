@@ -1,6 +1,48 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+    height: 100%;
+}
+
+/* Navigation */
+
+.nav {
+    position: absolute;
+    height: 20px;
+    bottom: 0;
+    width: 90%;
+    .footer_right, .footer_left {
+        height: 15px;
+        margin: 15px;
+        list-style-type: none;
+        li {
+            display: inline;
+            margin: 15px;
+            line-height: 1px;
+            a {
+            
+            cursor: pointer;
+            text-decoration: none;
+            }
+        }
+    }
+}
+
+.footer_left {
+    float: left;
+    #logo {
+        color: #fff;
+        font-size: 20px;
+        line-height: 1px;
+        letter-spacing: 1px;
+    }
+}
+
+.footer_right {
+    float: right;
+}
+
 #beer_table {
    width: 75%; 
 }

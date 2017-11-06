@@ -4,6 +4,7 @@
       <th>Brewery</th>
       <th>Name</th>
       <th>Style</th>
+      <th>Bottle Date</th>
       <th>Rating</th>
         </tr>
     </thead>
@@ -13,6 +14,12 @@
                 <td> <%= beer.brewery %> </td>
                 <td> <%= beer.name %> </td>
                 <td> <%= beer.style %> </td>
+                <% if beer.date %>
+                  <td> <%= beer.format_date %>
+                </td>
+                <% else %>
+                  <td>No date</td>
+                <% end %>
                 <td> <%= beer.rating %></td>
             </tr>
       <% end %>

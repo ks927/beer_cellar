@@ -8,4 +8,10 @@ class User < ApplicationRecord
   validates :email, presence: true
     
   has_many :beers
+    
+  # Formats date time to m-d-Y
+  def format_date
+    date.strftime("%m-%d-%Y") 
+  end
+    
 end

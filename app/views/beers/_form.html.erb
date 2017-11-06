@@ -9,6 +9,9 @@
 <%= f.label :Style %>
 <%= f.text_field :style %>
 
+<%= f.label :Bottle_Date %>
+<%= f.date_field :date %>
+
 <%= f.label :rating %>
 <%= f.number_field :rating, in: 0.0..5.0, step: 0.5 %>
 

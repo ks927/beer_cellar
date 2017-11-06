@@ -1,11 +1,2 @@
 <h1>The Beer Cellar</h1>
-<%= link_to "About", about_url %>
-<%= link_to "Contact", contact_url %>
-<% if user_signed_in? %>
-  <p>Welcome <%= @user.name %></p>
-  <%= link_to "Profile", user_path(current_user.id) %>
-  <%= link_to "Log out", sign_out_url %>
-<% else %>
-  <%= link_to "Sign up", sign_up_url %>
-  <%= link_to "Log in", log_in_url %>
-<% end %>
+
