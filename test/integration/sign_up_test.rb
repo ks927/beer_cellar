@@ -15,7 +15,7 @@ class SignUpTest < ActionDispatch::IntegrationTest
     end
     #redirect to user show page
     follow_redirect!
-    assert_select 'a[href=?]', sign_out_path
+    assert_select 'a[href=?]', sign_out_url
   end
     
 end

@@ -9,8 +9,14 @@
 <%= f.label :Style %>
 <%= f.text_field :style %>
 
+<%= f.label :Description %>
+<%= f.text_area :description %>
+
 <%= f.label :Bottle_Date %>
 <%= f.date_field :date %>
+
+<%= f.label :Cellar_Date %>
+<%= f.date_field :cellar_date %>
 
 <%= f.label :rating %>
 <%= f.number_field :rating, in: 0.0..5.0, step: 0.5 %>

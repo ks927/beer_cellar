@@ -18,14 +18,33 @@ class BeersController < ApplicationController
 
   def show
   end
+    
+  def edit
+    @beer = Beer.find(params[:id]) 
+  end
+    
+  def update
+    @beer = Beer.find(params[:id])
+    if @beer.update_attributes(beer_params)
+      flash[:notice] = "Beer updated!" 
+      redirect_to user_path(current_user)
+    else
+      render 'edit'
+    end
+  end
 
   def destroy
+    beer = Beer.find(params[:id])
+    beer.destroy
+    respond_to do |format|
+       format.html { redirect_to request.referrer } 
+    end
   end
     
   private
     
   def beer_params
-    params.require(:beer).permit(:name, :rating, :style, :brewery, :date)  
+    params.require(:beer).permit(:name, :rating, :style, :brewery, :date, :description, :cellar_date)  
   end
     
 end

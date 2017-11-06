@@ -4,7 +4,9 @@
       <th>Brewery</th>
       <th>Name</th>
       <th>Style</th>
+      <th>Description</th>
       <th>Bottle Date</th>
+      <th>Cellar Date</th>
       <th>Rating</th>
         </tr>
     </thead>
@@ -14,13 +16,23 @@
                 <td> <%= beer.brewery %> </td>
                 <td> <%= beer.name %> </td>
                 <td> <%= beer.style %> </td>
+                <td> <%= beer.description %></td>
                 <% if beer.date %>
-                  <td> <%= beer.format_date %>
+                  <td> <%= beer.date.to_s(:custom_datetime) %>
                 </td>
                 <% else %>
                   <td>No date</td>
                 <% end %>
+                <% if beer.cellar_date %>
+                  <td><%= beer.cellar_date.to_s(:custom_datetime) %></td>
+                <% else %>
+                  <td>No date</td>
+                <% end %>
                 <td> <%= beer.rating %></td>
+                <% if @user == current_user %>
+                  <td> <%= link_to "Edit", edit_beer_path(beer) %> </td>
+                  <td> <%= link_to "Delete", beer_path(beer), method: :delete %> </td>
+                <% end %>
             </tr>
       <% end %>
     </tbody>
