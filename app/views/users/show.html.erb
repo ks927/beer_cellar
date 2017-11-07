@@ -1,6 +1,6 @@
 <h1><%= @user.name %>'s Profile</h1>
 
-<h3><%= pluralize(@user.beers.count, "beer") %> </h3>
+<h3><%= link_to pluralize(@user.beers.count, "beer"), user_beers_path(@user.id) %> </h3>
 
 <% if @user == current_user %>
     <h3>Add beer</h3>

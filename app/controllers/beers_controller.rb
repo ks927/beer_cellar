@@ -1,6 +1,7 @@
 class BeersController < ApplicationController
     
   def index
+    @user = User.find_by(id: params[:user_id])
     @beers = current_user.beers
   end
     
@@ -37,7 +38,8 @@ class BeersController < ApplicationController
     beer = Beer.find(params[:id])
     beer.destroy
     respond_to do |format|
-       format.html { redirect_to request.referrer } 
+       format.js
+       format.html { redirect_to request.referrer || root_url }
     end
   end
     
