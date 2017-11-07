@@ -14,3 +14,8 @@ john:
   name: "John"
   email: "foo@bar.com"
   encrypted_password: "foobar"
+  
+mike:
+  name: "Mike"
+  email: "foobar@example.com"
+  encrypted_password: "foobar"

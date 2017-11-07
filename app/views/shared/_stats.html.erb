@@ -1,0 +1,3 @@
+<% @user ||= current_user %>
+<%= @user.following.count %> Following
+<%= @user.followers.count %> Followers
