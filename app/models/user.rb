@@ -23,11 +23,6 @@ class User < ApplicationRecord
   # Don't necessarily need the source here
   has_many :followers, through: :passive_relationships, source: :follower
     
-  # Formats date time to m-d-Y
-  def format_date
-    date.strftime("%m-%d-%Y") 
-  end
-    
   # Follows user
   def follow(other_user)
     following << other_user 
