@@ -1,26 +1,44 @@
-<%= form_for(@beer) do |f| %>
+<div class="row">
+    <form class="col s12">
+      <div class="row">
+    <%= form_for(@beer) do |f| %>
 
-<%= f.label :Brewery %>
-<%= f.text_field :brewery %>
+    <div class="input-field col s6">
+      <%= f.label :Brewery %>
+      <%= f.text_field :brewery %>
+    </div>
 
-<%= f.label :Name %>
-<%= f.text_field :name %>
+    <div class="input-field col s6">
+      <%= f.label :Name %>
+      <%= f.text_field :name %>
+    </div>
 
-<%= f.label :Style %>
-<%= f.text_field :style %>
+    <div class="input-field col s6">
+      <%= f.label :Style %>
+      <%= f.text_field :style %>
+    </div>
 
-<%= f.label :Description %>
-<%= f.text_area :description %>
+    <div class="input-field col s6">
+      <%= f.label :Description %>
+      <%= f.text_area :description, id: "textarea1", class: "materialize-textarea" %>
+    </div>
 
-<%= f.label :Bottle_Date %>
-<%= f.date_field :date %>
+    <div class="col s6">
+      <%= f.label :Bottle_Date %>
+      <%= f.date_field :date, class: "datepicker" %>
+    </div>
 
-<%= f.label :Cellar_Date %>
-<%= f.date_field :cellar_date %>
+    <div class="col s6">
+      <%= f.label :Cellar_Date %>
+      <%= f.date_field :cellar_date %>
+    </div>
 
-<%= f.label :rating %>
-<%= f.number_field :rating, in: 0.0..5.0, step: 0.5 %>
+    <div class="col s6">
+      <%= f.label :rating %>
+      <%= f.range_field :rating, id: "test5", min: "0.0", max: "5.0" %>
+    </div>
 
-<%= f.submit "Add" %>
+      <%= f.submit "Add" %>
 
-<% end %>
+    <% end %>
+</div>
